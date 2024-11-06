@@ -1,0 +1,57 @@
+<main class="py-5">
+    <div class="task-list">
+        <div class="container">
+            <div class="col-md-10 mx-auto">
+                <h1>TASKS</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Name</th>
+                            <th>Group</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Deadline</th>
+                            <th>Create date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let taskItem of tasks; let index = index">
+                            <!-- <td>{{index+1}}</td>
+                            <td>{{taskItem.name}}</td>
+                            <td>{{taskItem.group}}</td>
+                            <td>{{taskItem.status ? 'Đã hoàn thành': 'Chưa hoàn thành'}}</td>
+                            <td>{{taskItem.priority == 1? 'Rất quan trọng' : taskItem.priority == 2 ? 'Quan trọng' :
+                                'Không quan
+                                trọng'}}</td>
+                            <td>{{taskItem.duedate}}</td>
+                            <td>{{taskItem.createdate}}</td>
+                            <td> -->
+                            <td>{{ index + 1 }}</td>
+                            <td>{{ taskItem.name }}</td>
+                            <td>{{ taskItem.group }}</td>
+                            <td>{{ taskItem.status ? 'Đã hoàn thành' : 'Chưa hoàn thành' }}</td>
+                            <td>
+                                {{ taskItem.priority == 1 ? 'Rất quan trọng' :
+                                taskItem.priority == 2 ? 'Quan trọng' :
+                                'Không quan trọng' }}
+                            </td>
+                            <td>{{ taskItem.dueDate | date: 'dd/MM/yyyy' }}</td>
+                            <td>{{ taskItem.createdDate | date: 'dd/MM/yyyy' }}</td>
+                            <td>
+                                <div class="buttons">
+                                    <a href="../edit/edit.html"><button type="button"
+                                            class="btn btn-primary mx-1">Sửa</button></a>
+                                    <a href="#"><button type="button" class="btn btn-success mx-1">Xóa</button></a>
+                                    <a href="#"><button type="button" class="btn btn-info">Xem</button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
